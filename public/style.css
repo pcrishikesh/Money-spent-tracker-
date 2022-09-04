@@ -4,12 +4,23 @@ table {
     width: 100%;
   }
   
-  td, th {
+td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
   }
   
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+
+form {
+  padding: 2em;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+input {
+  padding: .5em;
+  width: 100%;
+}

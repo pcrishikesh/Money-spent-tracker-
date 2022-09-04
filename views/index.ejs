@@ -1,31 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
 
-    <h1>My bought things</h1>
+<h1>My bought things</h1>
 
-    <a href="/additem">Add items</a>
+<% sum.forEach(element => { %>
+    <h2>Total cost : <%= element.total %> </h2>
+<% }); %>
 
-    <table>
+<a href="/additem">Add items</a>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Cost</th>
+        <th>Date</th>
+        <th>itemdelete</th>
+    </tr>
+
+
+    <% itemfind.forEach(element => { %>
         <tr>
-            <th>Item</th>
-            <th>Cost</th>
-            <th>Date</th>
+            <td><%= element.item %></td>
+            <td class="cost"><%= element.cost %> $</td>
+            <td><%= element.date %></td>
+            <td><a href="/deleteitem/:<%= element._id %>">delete</a></td>
         </tr>
-
-        <tr>
-            <td>game</td>
-            <th>20 $</th>
-            <td>23/06/22</td>
-        </tr>
-    </table>
-    
-</body>
-</html>
+    <% }); %> 
+</table>
